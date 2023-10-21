@@ -1,0 +1,33 @@
+public class Singleton {
+    // Private static variable to hold the single instance of the class
+    private static Singleton instance;
+
+    // Private constructor to prevent instantiation from other classes
+    private Singleton() {
+        // Initialization code, if any
+    }
+
+    // Public method to provide access to the single instance
+    public static Singleton getInstance() {
+        if (instance == null) {
+            // Create the instance if it doesn't exist
+            instance = new Singleton();
+        }
+        return instance;
+    }
+
+    // Other methods and fields can be added as needed
+
+    public void doSomething() {
+        System.out.println("Singleton is doing something");
+    }
+}
+public class SingletonDemo {
+    public static void main(String[] args) {
+        // Get the Singleton instance
+        Singleton singleton = Singleton.getInstance();
+
+        // Call a method on the Singleton instance
+        singleton.doSomething();
+    }
+}
